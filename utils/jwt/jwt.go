@@ -12,12 +12,12 @@ const (
 	SecretKey = "sunrise"
 )
 type User struct {
-	UserID  string `json:"omitempty"`
-	Phone string  `json:"omitempty"`
-	OpenID  string  `json:"omitempty"`
-	UserName    string `json:"omitempty"`
-	Address string  `json:"omitempty"`
-	Remark   string `json:"omitempty"`
+	UserID  string `json:"userID"`
+	Phone string  `json:"phone"`
+	OpenID  string  `json:"openID"`
+	UserName    string `json:"userName"`
+	Address string  `json:"address"`
+	Remark   string `json:"remark"`
 }
 
 //自定义payload结构体
@@ -31,7 +31,7 @@ func JwtGenerateToken(u *User,d time.Duration) (string, error) {
 	stdClaims := jwt.StandardClaims{
 		ExpiresAt: expireTime.Unix(),
 		IssuedAt:  time.Now().Unix(),
-		Id:        fmt.Sprintf("%d", u.UserID),
+		Id:        u.UserID,
 		Issuer:    SecretKey,
 	}
 
