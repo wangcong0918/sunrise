@@ -1,6 +1,6 @@
 package jwt
 import (
-	"log"
+	"github.com/wangcong0918/sunrise/log"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"reflect"
