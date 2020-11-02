@@ -1,6 +1,6 @@
 package jwt
 import (
-	"JuFeng/sunrise/log"
+	"log"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"reflect"
